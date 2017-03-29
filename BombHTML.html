@@ -8,7 +8,7 @@
     <title>DEFUSE BOMB</title>
 </head>
 <body>
-    <script>
+    <script id="init">
         timerInit();
     </script>
     <div class="bombTimer" title="ййЙ" id="qwe">
@@ -16,8 +16,11 @@
         Seconds: <span class="seconds" id="sec"></span>
     </div>
     <input class="bombChecker" type="button" onclick="checkDefuse()"/>
-    <audio loop autoplay preload="auto" >
-        <source src="tik.mp3" type="audio/mpeg" id="sound">
-    </audio>
+    <audio loop autoplay preload="auto" id="sound" src="tik.mp3"></audio>
+    <div class="wire">
+        <input type="radio" name="preferred_color" value="Red" /> Red<br />
+        <input type="radio" name="preferred_color" value="Blue" /> Blue<br />
+        <input type="radio" name="preferred_color" value="Green" /> Green<br />
+    </div>
 </body>
 </html>

@@ -13,6 +13,10 @@
     background-image: url("kus.jpeg");
     width: 100px;
     height: 100px;
-    margin-left: 46%;
-    margin-top: 40%;
+    position: absolute;
+    left: 46.1%;
+}
+.wire{
+    background-color: red;
+
 }
