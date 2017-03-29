@@ -3,3 +3,6 @@
  */
 /*
 код с таймера, проверок*/
+function hello() {
+    document.getElementById('min').innerHTML="";
+}

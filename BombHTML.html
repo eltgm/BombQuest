@@ -2,10 +2,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="BombCSS.css">
+    <script src="BombJS.js" type="text/javascript"></script>
     <meta charset="UTF-8">
     <title>DEFUSE BOMB</title>
 </head>
 <body>
-
+    <div class="bombTimer">
+        Minutes: <span class="minutes" id="min">6</span><br>
+        Seconds: <span class="seconds"></span>
+    </div>
+    <input class="bombChecker" type="button" onclick="hello()"/>
+    <audio loop autoplay preload="auto" >
+        <source src="tik.mp3" type="audio/mpeg">
+    </audio>
 </body>
 </html>

@@ -1,2 +1,18 @@
 /*
 анимации и прочее*/
+.bombTimer{
+    text-align: match-parent;
+    margin: 0px auto;
+    border-bottom: 2px solid #4b75a4;
+    padding: 0px;
+    display: table;
+    background-color: red;
+}
+
+.bombChecker {
+    background-image: url("kus.jpeg");
+    width: 100px;
+    height: 100px;
+    margin-left: 46%;
+    margin-top: 40%;
+}
