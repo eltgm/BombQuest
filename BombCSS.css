@@ -3,11 +3,10 @@
 .bombTimer{
     text-align: match-parent;
     margin: 0px auto;
-    border-bottom: 2px solid #4b75a4;
+    /*border-bottom: 2px solid;*/
     padding: 0px;
     display: table;
-    background-color: red;
-}
+} /*стиль с таймером*/
 
 .bombChecker {
     background-image: url("kus.jpeg");
@@ -15,8 +14,8 @@
     height: 100px;
     position: absolute;
     left: 46.1%;
-}
+    top: 85%;
+} /*стиль для кнопки с кусачками*/
 .wire{
-    background-color: red;
 
-}
+} /*стиль для проводов*/

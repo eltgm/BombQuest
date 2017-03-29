@@ -3,39 +3,48 @@
  */
 /*
 код с таймера, проверок*/
-var lifes = 3;
-var minute = 15;
-var second = 0
+var lifes = 3; //жизни
+var minute = 1; //минуты таймера
+var second = 0; //секунды
+var interval = 0; //переменная, которая хранит ID интервала
 
-function end() {
-    alert("Boom");
-}
 
 function timerInit() {
-    setInterval('refresh()',1000);
-}
+    interval = setInterval('refresh()',1000); // запускаем вызов функции каждые 1000мс
+}  //инициализация таймера
 
 function checkDefuse() {
-    var checked = 0;
-    if(lifes == 0) {
-        document.getElementById('sound').setAttribute('src', 'boom.mp3');
-        document.getElementById('sound').setAttribute('loop', '');
-        document.getElementById('init').innerHTML = "timerInit(0)";
-    }else{
-        var rad=document.getElementsByName('preferred_color');
-        for (var i=0;i<rad.length; i++) {
-            if (rad[i].checked) {
-                checked = i;
-            }
-        }
-        if(checked != 0){
-            lifes--;
-            alert("Осталось " + lifes + " жизней")
+    var checked = -1;
+
+    var rad=document.getElementsByName('preferred_color'); //получили radiobuttonы
+
+    for (var i=0;i<rad.length; i++) {
+        if (rad[i].checked) {
+            checked = i; //нашли выбранный radiobutton
         }
     }
-}
 
-function refresh() {;
+    if(checked != 0) { // если выбрали не тот...
+        lifes--; // пропадает одна жизнь
+
+        if (lifes <= 0) { // если жизни кончились, останавлеваем таймер, возпроизводим звук взрыва
+            document.getElementById('sound').setAttribute('src', 'boom.mp3');
+            document.getElementById('sound').removeAttribute('loop');
+            clearInterval(interval);
+            alert("gg");
+            return 0;
+        }
+
+        alert("Осталось " + lifes + " жизней")
+    }
+} //проверяем на разминирование
+
+function refresh() {
+    if(minute == 0 && second == 0){ // если время вышло
+        lifes = 0; // жизней 0
+        checkDefuse(); // включаем проверку на разминирование, которая приведет к взрыву, тк жизней нет
+        return 0;
+    }
     if(second == 0){
         minute--;
         second = 60;
@@ -43,13 +52,4 @@ function refresh() {;
     second--;
     document.getElementById('min').innerHTML = minute;
     document.getElementById('sec').innerHTML = second;
-}
-
-function fun1() {
-    var rad=document.getElementsByName('preferred_color');
-    for (var i=0;i<rad.length; i++) {
-        if (rad[i].checked) {
-            alert('Выбран '+i+' radiobutton');
-        }
-    }
-}
+} //обновление таймера
