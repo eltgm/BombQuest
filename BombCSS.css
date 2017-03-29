@@ -2,12 +2,11 @@
 анимации и прочее*/
 .bombTimer{
     text-align: match-parent;
-    margin: 0px auto;
+    margin: 0 auto;
     /*border-bottom: 2px solid;*/
-    padding: 0px;
+    padding: 0;
     display: table;
 } /*стиль с таймером*/
-
 .bombChecker {
     background-image: url("kus.jpeg");
     width: 100px;
