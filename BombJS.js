@@ -36,6 +36,10 @@ function checkDefuse() {
         }
 
         alert("Осталось " + lifes + " жизней")
+    }else{
+        document.getElementById('sound').setAttribute('src', 'defuse.mp3');
+        document.getElementById('sound').removeAttribute('loop');
+        clearInterval(interval);
     }
 } //проверяем на разминирование
 
